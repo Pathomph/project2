@@ -5,17 +5,21 @@
   </div>
 </template>
 <script>
-import HelloWorld from '@/components/HelloWorld.vue'
+import axios from 'axios'
 export default{
     name: 'Products',
-    components: {
-        HelloWorld
-    },
     data(){
         return{
           message:'Project 2'  
         }
-    }
+    },
+    mounted () {
+    axios
+      .get('https://shielded-spire-43023.herokuapp.com/api/products/')
+      .then(function(response))
+      console.log(response.data)
+  }
+})
 }
 </script>
 
